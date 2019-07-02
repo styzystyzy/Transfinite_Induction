@@ -73,7 +73,7 @@ Proof.
         rewrite <- H9 in H12; contradiction.
 Qed.
 
-Theorem The_Second_Mathematical_Induction : forall (P: Class -> Prop),
+Theorem Complete_Induction : forall (P: Class -> Prop),
   P Φ -> (forall k, k ∈ W /\ (forall m, m ≺ k -> P m) -> P k) ->
   (forall n, n ∈ W -> P n).
 Proof.
@@ -98,7 +98,7 @@ Proof.
         apply Theorem19 in H8; apply H7 in H8; subst j; auto.
 Qed.
 
-Theorem The_Second_Mathematical_Induction' : forall (P: Class -> Prop),
+Theorem Complete_Induction' : forall (P: Class -> Prop),
   P Φ -> (forall k, k ∈ W /\ (forall j, j ∈ k -> P j) -> P k) ->
   (forall n, n ∈ W -> P n).
 Proof.
